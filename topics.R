@@ -31,35 +31,33 @@ results <- response
 n <- nrow(papers_to_summarize)
 
 for (i in seq_len(n)) {
-  if (!fs::dir_exists(path = "docs")) fs::dir_create(path = "docs")
   d <- papers_to_summarize$dir[i]
-  doc_path <- fs::path("docs", d)
-  if (!fs::dir_exists(path = doc_path)) fs::dir_create(path = doc_path)
-  rmd_path <- fs::path("docs", d, "index.Rmd")
+  rmd_path <- fs::path(d, "index.Rmd")
   writeLines(results[[i]], rmd_path)
   rmarkdown::render(rmd_path, output_format = pdf_document())
 }
 
+## NOt needed since not using github pages
 ## Write a final Rmd file.
-index.rmd <- c('---'
-             , 'title: "Papers to discuss"'
-             , 'author: "Tibs"'
-             , 'output: html_document'
-             , '---'
-             , ''
-             , '## List'
-             , ''
-)
+## index.rmd <- c('---'
+##              , 'title: "Papers to discuss"'
+##              , 'author: "Tibs"'
+##              , 'output: html_document'
+##              , '---'
+##              , ''
+##              , '## List'
+##              , ''
+## )
 
-for (i in seq_len(n)) {
-  p <- papers_to_summarize$info[i]
-  d <- fs::path(papers_to_summarize$dir[i], "index.pdf")
-  index.rmd <- append(index.rmd, sprintf(" - [%s](%s)", p, d))
-}
+## for (i in seq_len(n)) {
+##   p <- papers_to_summarize$info[i]
+##   d <- fs::path(papers_to_summarize$dir[i], "index.pdf")
+##   index.rmd <- append(index.rmd, sprintf(" - [%s](%s)", p, d))
+## }
 
-index_file_path <- fs::path("docs", "index.html")
-writeLines(index.rmd, index_file_path)
-rmarkdown::render(index_file_path)
+## index_file_path <- fs::path("docs", "index.html")
+## writeLines(index.rmd, index_file_path)
+## rmarkdown::render(index_file_path)
 
 
 
