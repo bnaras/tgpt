@@ -1,0 +1,11 @@
+---
+title: "Papers to discuss"
+author: "Tibs"
+output: html_document
+---
+
+## List
+
+ - [Efron's 1981 Biometrika paper on Nonparametric estimates of standard error](docs/E1981/index.html)
+ - [1986 Statistical Science paper on Generalized Additive Models by Hastie and Tibshirani](docs/HT1986/index.html)
+ - [1996 Statistical Science paper on Boostrap Confidence Intervals by Efron and Diciccio](docs/ED1996/index.html)
