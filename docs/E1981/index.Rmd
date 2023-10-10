@@ -1,15 +1,14 @@
-**Summary of Efron's 1981 Biometrika Paper on Nonparametric Estimates of Standard Error**
+In his 1981 paper published in Biometrika, Efron proposed a method for estimating the standard error without relying on any distributional assumptions. The paper titled "Nonparametric estimates of standard error: The jackknife, the bootstrap and other methods" introduced the bootstrap method as a powerful tool for statistical inference.
 
-In his paper, Efron (1981) investigates the problem of estimating the standard error of a statistical estimate when the underlying assumptions of traditional parametric methods are not met. He proposes a nonparametric approach that can be used to estimate the standard error in such cases.
+The bootstrap method involves repeatedly sampling from the original dataset with replacement to create multiple bootstrap samples. Through this resampling process, a large number of new datasets are generated, each with the same sample size as the original data. From these bootstrap samples, estimates of the standard error can be obtained by calculating the standard deviation of the parameter estimates across the bootstrap replications.
 
-The key idea behind Efron's method is to use the bootstrap resampling technique. This involves repeatedly sampling from the observed data with replacement to create multiple bootstrap samples. The estimate of interest is then computed using each bootstrap sample. The variability of these estimates across the bootstrap samples can be used to obtain an estimate of the standard error.
+Efron emphasized the importance of the jackknife method in estimating the standard error when the bootstrap is not computationally feasible. The jackknife approach involves systematically leaving out one observation at a time from the original dataset to create multiple jackknife replicates. Similar to the bootstrap, the standard error can be estimated using the standard deviation of the parameter estimates across the jackknife replicates.
 
-Efron discusses the theoretical foundations of the bootstrap method and provides practical guidelines for its implementation. He also presents simulation results that demonstrate the effectiveness of the bootstrap method in estimating standard errors in nonparametric settings.
+Efron's paper serves as a comprehensive introduction to the jackknife, the bootstrap, and other nonparametric methods for estimating standard error. It provides theoretical explanations and practical examples to demonstrate the applicability and advantagesof these methods in various statistical analyses.
 
-Overall, Efron's paper provides a valuable contribution to the field of nonparametric statistical inference by offering a practical and effective approach for estimating standard errors in situations where traditional parametric methods are not applicable.
+The paper also highlights the advantages of nonparametric methods compared to traditional parametric methods, such as their robustness to violations of distributional assumptions and their ability to provide accurate estimates even with small sample sizes.
 
-**Reference:**
+Efron's paper is highly influential in the field of statistics and has been cited extensively. It has contributed significantly to the development and popularity of bootstrap and jackknife methods in statistical inference.
 
-Efron, B. (1981). Nonparametric estimates of standard error: The jackknife,the bootstrap, and other methods. *Biometrika*, 68(3):589-599.
-
-**URL/DOI:** [https://doi.org/10.1093/biomet/68.3.589](https://doi.org/10.1093/biomet/68.3.589)
+To access the full paper, please visit the following URL:
+[https://doi.org/10.1093/biomet/68.3.589](https://doi.org/10.1093/biomet/68.3.589)

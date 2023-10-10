@@ -37,7 +37,7 @@ for (i in seq_len(n)) {
   if (!fs::dir_exists(path = doc_path)) fs::dir_create(path = doc_path)
   rmd_path <- fs::path("docs", d, "index.Rmd")
   writeLines(results[[i]], rmd_path)
-  rmarkdown::render(rmd_path)
+  rmarkdown::render(rmd_path, output_format = pdf_document())
 }
 
 ## Write a final Rmd file.
@@ -53,12 +53,13 @@ index.rmd <- c('---'
 
 for (i in seq_len(n)) {
   p <- papers_to_summarize$info[i]
-  d <- fs::path("docs", papers_to_summarize$dir[i], "index.html")
+  d <- fs::path(papers_to_summarize$dir[i], "index.pdf")
   index.rmd <- append(index.rmd, sprintf(" - [%s](%s)", p, d))
 }
 
-writeLines(index.rmd, "index.Rmd")
-rmarkdown::render("index.Rmd")
+index_file_path <- fs::path("docs", "index.html")
+writeLines(index.rmd, index_file_path)
+rmarkdown::render(index_file_path)
 
 
 
